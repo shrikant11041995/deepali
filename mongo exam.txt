@@ -1,0 +1,82 @@
+1) use vita_dac_1642019 
+
+2)db.emp.find()
+  db.dept.find()
+
+3)db.emp.insert({"userid":"rirani","jobTitleName":"Devloper","firstName":"Romin","lastName":"Irani","preferredFullName":"RominIrani","employeeCode":"E1","region":"CA","Phonenumber":"408-1234567","emailAddress":"romin.k.irani@gmail.com"})
+
+4)db.dept.insertMany([{"deptid":1,"deptname":"COMP"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5cb563b2c147f5b8f526bafd")
+        ]
+}
+
+5)db.emp.find({"Phonenumber":"408-1234567"}).pretty()
+{
+        "_id" : ObjectId("5cb560f9c147f5b8f526bafc"),
+        "userid" : "rirani",
+        "jobTitleName" : "Devloper",
+        "firstName" : "Romin",
+        "lastName" : "Irani",
+        "preferredFullName" : "Romin Irani",
+        "employeeCode" : "E1",
+        "region" : "CA",
+        "Phonenumber" : "408-1234567",
+        "emailAddress" : "romin.k.irani@gmail.com"
+
+
+}
+
+6)db.emp.find({"phonenumber":"408-1234567"},     {"phonenumber":1})
+
+8)redis 127.0.0.1:6379> set emp raj
+OK
+
+9)redis 127.0.0.1:6379> get emp
+"raj"
+
+10)redis 127.0.0.1:6379> lpush em "kir"
+(integer) 1
+redis 127.0.0.1:6379> lpush em "vrush"
+(integer) 2
+redis 127.0.0.1:6379> lpush em "Gaur"
+(integer) 3
+redis 127.0.0.1:6379> lpush em "gah"
+(integer) 4
+
+
+11.
+redis 127.0.0.1:6379> lrange em 0 3
+1) "kir"
+2) "vrush"
+3) "Gaur"
+4) "gah"
+
+12)redis 127.0.0.1:6379> sadd stud abc
+(integer) 1
+redis 127.0.0.1:6379> sadd stud pqr
+(integer) 1
+redis 127.0.0.1:6379> sadd stud xyz
+(integer) 1
+
+13)redis 127.0.0.1:6379> ttl stud
+(integer) -1
+
+14)redis 127.0.0.1:6379> HMSET useme 1:username kiran password satpute
+OK
+redis 127.0.0.1:6379> hgetall use:1
+1)username
+2)kiran
+3)password
+4)satpute
+
+15)redis 127.0.0.1:6379> ttl emp
+(integer) 55
+redis 127.0.0.1:6379> ttl emp
+(integer) 53
+
+
+
+
